@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/admins")
-//@CrossOrigin(origins = "http://localhost:8080",maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:8080",maxAge = 3600)//
 public class AdminsController {
     @Autowired
     private AdminsService adminsService;
