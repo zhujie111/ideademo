@@ -20,7 +20,7 @@ public class Admins implements Serializable{
     private Integer doid;
     private String by1;
     private Date lastpasswordresetdate;
-    //用户所属的角色集合
+    //用户所属的角色集合//
     private List<Authority> authorities;
 
     public Date getLastpasswordresetdate() {
