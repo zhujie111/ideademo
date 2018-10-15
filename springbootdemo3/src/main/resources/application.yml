@@ -1,0 +1,51 @@
+#jwt相关配置
+jwt:
+  #请求头部属性名,对应的值就是请求客户端保存令牌的值
+  header: Authorization
+  #自定义口令
+  secret: mySecret
+  #失效时间
+  expiration: 604800
+  #承载字符串
+  tokenHead: Bearer
+  #路由:获取请求携带令牌的路径
+  route:
+    authentication:
+            path: /auth
+            refresh: /refresh
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hospital?serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123
+  jackson:
+    serialization:
+     indent_output: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/logs
+mybatis:
+  type-aliases-package: com.newer.springbootdemo3.domain
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mybatis/mapper/*.xml
+server:
+  port: 8086
+  servlet:
+    context-path:
+#日志输出级别
+logging:
+  level:
+    org.springframework.security: info
+    com.newer.springbootdemo3.mapper: debug
+    com.newer.springbootdemo3.util: info
